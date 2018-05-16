@@ -1,0 +1,82 @@
+<html>
+ <head>
+<title>BMI Calculator</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+    function computeBMI()
+    {
+        //Obtain user inputs
+        var height=Number(document.getElementById("height").value);
+        var heightunits=document.getElementById("heightunits").value;
+        var weight=Number(document.getElementById("weight").value);
+        var weightunits=document.getElementById("weightunits").value;
+
+
+
+        //Convert all units to metric
+        if (heightunits=="inches") height/=39.3700787;
+        if (weightunits=="lb") weight/=2.20462;
+
+        //Perform calculation
+        var BMI=weight/Math.pow(height,2);
+
+        //Display result of calculation
+        document.getElementById("output").innerText=Math.round(BMI*100)/100;
+
+        var output =  Math.round(BMI*100)/100
+        if (output<18.5){
+            document.getElementById("comment").innerText = "Underweight";
+
+            image3.style.display = 'none';
+            image4.style.display = 'none';
+            image2.style.display = 'none';
+            image.style.display = 'block';}
+
+        else   if (output>=18.5 && output<=25){
+            document.getElementById("comment").innerText = "Normal";
+            image.style.display = 'none';
+            image3.style.display = 'none';
+            image4.style.display = 'none';
+             image2.style.display = 'block';}
+        else   if (output>=25 && output<=30){
+            document.getElementById("comment").innerText = "Overweight";
+            image.style.display = 'none';
+
+            image4.style.display = 'none';
+            image2.style.display = 'none';
+            image3.style.display = 'block';}
+        else   if (output>30){
+            document.getElementById("comment").innerText = "Obese";
+            image.style.display = 'none';
+            image3.style.display = 'none';
+
+            image2.style.display = 'none    ';
+        image4.style.display = 'block';}
+        // document.getElementById("answer").value = output;
+    }
+</script>
+<h1>AJAX 2 BMI Calculator</h1>
+ </head>
+
+<p>Height<input type="text" id="height"/>
+    <select type="multiple" id="heightunits">
+        <option value="metres" selected="selected">Meters</option>
+        <option value="inches">Inches</option>
+    </select>
+     </p>
+<p>Weight<input type="text" id="weight"/>
+    <select type="multiple" id="weightunits">
+        <option value="kg" selected="selected">Kilograms</option>
+        <option value="lb">Pounds</option>
+    </select>
+</p>
+<input type="submit" value="Calculate" onclick="computeBMI();">
+<h1>Your BMI is : <span id="output">?</span></h1>
+
+<h2>You are : <span id="comment"> ?</span> </h2>
+ <img src="http://i0.kym-cdn.com/photos/images/masonry/001/330/679/202.jpg" style="display: none; background: #000;" id="image"/>
+ <img src="http://i0.kym-cdn.com/entries/icons/original/000/025/003/benswoll.jpg" style="display: none; background: #ff0000;" id="image2"/>
+ <img src="https://pbs.twimg.com/profile_images/950854006703869952/_cAr1Qve_400x400.jpg" style="display: none; background: #ff0000;" id="image3"/>
+ <img src="https://i.ytimg.com/vi/YbNlMsOP2iA/maxresdefault.jpg" style="display: none; background: #ff0000;" id="image4"/>
+ </body>
+</html>
