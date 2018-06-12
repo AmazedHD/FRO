@@ -1,0 +1,102 @@
+
+
+.lb {
+  width: 60px;
+  height: 468px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  font-size: 17px;
+  background-image: url("afb/hout.jpg");
+  background-size: cover;
+}
+
+
+
+.lb_laag1 {
+  transition: transform .5s;
+  /* margin-top: -820px; */
+}
+.lb_laag1.lb--uit {
+  transform: translateX(-820px);
+}
+
+.lb_geef {
+  transition: transform 1s;
+}
+.lb_geef.lb--uit {
+  transform: translateY(-50px);
+}
+
+.lb_mij {
+  margin-top: 17px;
+  transition: transform .5s;
+}
+.lb_mij.lb--uit {
+  transform: translateX(100px);
+}
+
+.lb_flink {
+  margin-top: 17px;
+  transition: transform .5s;
+}
+.lb_flink.lb--uit {
+  transform: translateY(-100px);
+}
+
+.lb_wat {
+  margin-top: 17px;
+  transition: transform .5s;
+}
+.lb_wat.lb--uit {
+  transform: rotate(720deg) translateX(60px);
+}
+
+.lb_knaken {
+  margin-top: 17px;
+  color: rgba(218, 155, 72, 0.82);
+  transition: transform .5s;
+  margin-left: 10px;
+
+}
+.lb_knaken.lb--uit {
+  transform: translateX(-100px);
+}
+
+
+.lb_geld {
+  transition: transform .5s;
+}
+.lb_geld.lb--uit {
+  transform: translateX(20px);
+}
+
+.lb_geld2 {
+  margin-top: 80px;
+  transition: transform .5s cubic-bezier(.39,1.27,1,1.01);
+}
+.lb_geld2.lb--uit {
+  transform: translateX(-100px);
+}
+
+.lb_laag1 .lb_ballon {
+  margin-top: -38px;
+  background: white;
+  width:3.4em;
+  height: 3.4em;
+  border-radius: 50%;
+  transition: transform .5s;
+}
+.lb_ballon.lb--uit {
+  transform: translateX(-100px);
+}
+
+
+.lb_laag2 {
+    background: rgba(255,255,255,0.6);
+    margin-top:628px;
+    padding-bottom: 40px;
+    color: rgb(84, 121, 254);
+}
