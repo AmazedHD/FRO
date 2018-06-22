@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+#validatie img {
+    height: 1em;
+    width: auto;
+    border: 0;
+    margin: 0 .3em;
+}
+
+nav {
+  background-color: #86b773;
+  color: #fff;
+}
+.menu-toggle {
+  background: #5a7a4e;
+  cursor: pointer;
+  padding: 1em;
+  display: block;
+  text-align: right;
+}
+#menuToggle{
+  display: none;
+}
+#menuToggle:checked ~ ul a {
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  transform: scaleY(1);
+  border-bottom: 1px solid #eee;
+}
+#menuToggle:checked ~ .menu-toggle .fa-times {
+  display: block;
+}
+#menuToggle:checked ~ .menu-toggle .fa-bars {
+  display: none;
+}
+/* het menu verbergen */
+.fa-times{
+  display: none;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav a {
+  display: block;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  padding: 1em;
+  border-bottom: 0 solid #eee;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  transform: scaleY(0);
+  transition: all 0.7s ease-out;
+}
+
+nav a:hover {
+  color: #000;
+  background: #fff;
+}
+
+.heeft-submenu ul{
+  padding-left: .5em;
+  border-left: 5px double #fff;
+}
+/* Het submenu verbergen */
+#nav .heeft-submenu li a {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  transform: scaleY(0);
+  border-bottom-width: 0;
+  transition: all .5s ease-out;
+}
+/* Het submenu tonen */
+#nav .heeft-submenu:hover li a {
+  font-size: 1em;
+  height: 1em;
+  line-height: 1em;
+  transform: scaleY(1);
+  border-bottom-width: 1px;
+}
+.heeft-submenu > a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.heeft-submenu > a::after {
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  content: "\f0d7";
+}
+.heeft-submenu:hover > a::after {
+  content: "\f0da";
+  font-weight: 900;
+}
+
+main {
+  padding: 1em;
+}
+main img {
+  max-width: 100%;
+}
+
+footer{
+  padding: 1em;
+  background: #f6f6f6;
+  color: #f6f6f6;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+/* Opmaak breder viewport */
+@media screen and (min-width:40em) {
+  nav>ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  }
+  /*// toggel- label verwijdersen */
+  .menu-toggle {
+
+    display: none;
+  }
+  nav a {
+
+    font-size: 1em;
+    height: 1em;
+    line-height: 1em;
+    transform: scaleY(1);
+
+  }
+  .heeft-submenu  {
+     position: relative;
+  }
+  .heeft-submenu ul {
+    position: absolute;
+    border-left: 0;
+    padding: 0;
+    width: 100%
+  }
+  .heeft-submenu a {
+    background: #86b773;
+
+  }
+  /*een lijntje links van de items van het hoofdmenu, behalve de eerste*/
+  nav>ul>li:not(:first-child) a {
+  border-left: 10px solid #ffffff;
+  }
+
+ }
